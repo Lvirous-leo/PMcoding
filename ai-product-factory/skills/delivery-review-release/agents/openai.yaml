@@ -1,0 +1,4 @@
+interface:
+  display_name: "Delivery Review and Release"
+  short_description: "Supervise Claude Code, review quality, and govern release"
+  default_prompt: "Use $delivery-review-release to execute the next approved delivery phase, verify evidence, and stop at any unmet gate."

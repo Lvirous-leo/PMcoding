@@ -1,0 +1,157 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.codex/ai-product-factory/state.schema.json",
+  "title": "AI Product Factory State",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "project",
+    "workflow",
+    "artifacts",
+    "open_questions",
+    "blocked_reasons",
+    "updated_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 3
+    },
+    "project": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "root", "mode", "response_language"],
+      "properties": {
+        "name": {"type": "string", "minLength": 1},
+        "root": {"type": "string", "minLength": 1},
+        "mode": {"$ref": "#/$defs/mode"},
+        "response_language": {"enum": ["auto", "en", "zh"]}
+      }
+    },
+    "workflow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "current_phase",
+        "run_status",
+        "depth",
+        "evidence_level",
+        "decision",
+        "gate_status"
+      ],
+      "properties": {
+        "current_phase": {"$ref": "#/$defs/phase"},
+        "run_status": {"enum": ["not_started", "in_progress", "blocked", "completed"]},
+        "depth": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["requested", "selected", "reason"],
+          "properties": {
+            "requested": {"enum": ["auto", "lite", "standard", "deep"]},
+            "selected": {"enum": ["lite", "standard", "deep"]},
+            "reason": {"type": "string"}
+          }
+        },
+        "evidence_level": {"$ref": "#/$defs/evidence"},
+        "decision": {"$ref": "#/$defs/decision"},
+        "gate_status": {"enum": ["not_ready", "ready_for_review", "approved", "blocked"]}
+      }
+    },
+    "artifacts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["prd", "ui_input", "ui", "tdd", "sprint", "review", "release"],
+      "properties": {
+        "prd": {"$ref": "#/$defs/artifact"},
+        "ui_input": {"$ref": "#/$defs/artifact"},
+        "ui": {"$ref": "#/$defs/artifact"},
+        "tdd": {"$ref": "#/$defs/artifact"},
+        "sprint": {"$ref": "#/$defs/artifact"},
+        "review": {"$ref": "#/$defs/artifact"},
+        "release": {"$ref": "#/$defs/artifact"}
+      }
+    },
+    "open_questions": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "critical_assumptions": {
+      "type": "array",
+      "items": {"type": "string"},
+      "default": []
+    },
+    "blocked_reasons": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "$defs": {
+    "mode": {
+      "enum": ["greenfield", "enhancement", "non-ui"]
+    },
+    "phase": {
+      "enum": [
+        "discovery",
+        "prd",
+        "ui_input",
+        "design",
+        "technical_design",
+        "planning",
+        "development",
+        "review",
+        "release",
+        "completed"
+      ]
+    },
+    "evidence": {
+      "enum": ["L0", "L1", "L2", "L3"]
+    },
+    "decision": {
+      "enum": ["UNDECIDED", "GO", "PIVOT", "KILL", "HOLD"]
+    },
+    "artifact_status": {
+      "enum": [
+        "missing",
+        "pending",
+        "draft",
+        "in_review",
+        "approved",
+        "invalidated",
+        "not_applicable",
+        "blocked"
+      ]
+    },
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "version",
+        "status",
+        "approved_by",
+        "approved_at",
+        "upstream_versions",
+        "invalidated_by"
+      ],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "version": {"type": "integer", "minimum": 0},
+        "status": {"$ref": "#/$defs/artifact_status"},
+        "approved_by": {"type": ["string", "null"]},
+        "approved_at": {"type": ["string", "null"], "format": "date-time"},
+        "upstream_versions": {
+          "type": "object",
+          "additionalProperties": {"type": "integer", "minimum": 0}
+        },
+        "invalidated_by": {
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      }
+    }
+  }
+}

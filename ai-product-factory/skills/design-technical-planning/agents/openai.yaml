@@ -1,0 +1,4 @@
+interface:
+  display_name: "Design and Technical Planning"
+  short_description: "Turn an approved PRD into design, TDD, and tasks"
+  default_prompt: "Use $design-technical-planning to continue the next approved design or technical planning phase without writing implementation code."

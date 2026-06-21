@@ -1,0 +1,52 @@
+[
+  {
+    "id": "trigger-orchestrator-en",
+    "prompt": "Take this product from idea to production and continue the complete product workflow.",
+    "expected_skill": "ai-product-factory"
+  },
+  {
+    "id": "trigger-orchestrator-zh",
+    "prompt": "用产品工厂把这个想法从想法到上线，并能继续流程。",
+    "expected_skill": "ai-product-factory"
+  },
+  {
+    "id": "trigger-product-en",
+    "prompt": "Analyze this product idea, research competitors, and draft a PRD.",
+    "expected_skill": "product-discovery-prd"
+  },
+  {
+    "id": "trigger-product-zh",
+    "prompt": "分析这个产品需求和用户问题，做竞品研究并更新 PRD。",
+    "expected_skill": "product-discovery-prd"
+  },
+  {
+    "id": "trigger-design-en",
+    "prompt": "Prepare OpenDesign input, then write the technical design and sprint plan.",
+    "expected_skill": "design-technical-planning"
+  },
+  {
+    "id": "trigger-design-zh",
+    "prompt": "根据已批准 PRD 做设计评审、技术方案和开发计划。",
+    "expected_skill": "design-technical-planning"
+  },
+  {
+    "id": "trigger-delivery-en",
+    "prompt": "Hand these tasks to Claude Code, run code review, and prepare the release.",
+    "expected_skill": "delivery-review-release"
+  },
+  {
+    "id": "trigger-delivery-zh",
+    "prompt": "把任务交给 Claude Code，实现后做代码评审和发布准备。",
+    "expected_skill": "delivery-review-release"
+  },
+  {
+    "id": "negative-small-edit",
+    "prompt": "Fix the spelling mistake in this sentence.",
+    "expected_skill": null
+  },
+  {
+    "id": "negative-general-question",
+    "prompt": "Explain what a binary tree is.",
+    "expected_skill": null
+  }
+]

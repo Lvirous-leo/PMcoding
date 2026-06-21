@@ -1,0 +1,4 @@
+interface:
+  display_name: "Product Discovery and PRD"
+  short_description: "Analyze product needs and produce an evidence-aware PRD"
+  default_prompt: "Use $product-discovery-prd to analyze this idea, identify the real need, assess evidence, and create or update the PRD."

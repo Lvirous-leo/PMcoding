@@ -1,0 +1,23 @@
+{
+  "name": "ai-product-factory",
+  "version": "3.0.0",
+  "description": "Governed product discovery, design planning, delivery review, and release orchestration.",
+  "author": {
+    "name": "AI Product Factory"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "AI Product Factory",
+    "shortDescription": "Turn product ideas into governed delivery artifacts.",
+    "longDescription": "A four-skill product delivery system with adaptive discovery depth, explicit approvals, resumable state, Claude Code implementation handoffs, and deterministic quality gates.",
+    "developerName": "AI Product Factory",
+    "category": "Productivity",
+    "capabilities": [
+      "product-discovery",
+      "ux-planning",
+      "technical-design",
+      "delivery-governance"
+    ],
+    "defaultPrompt": "Use $ai-product-factory to inspect this repository and continue from the first incomplete governed phase."
+  }
+}
