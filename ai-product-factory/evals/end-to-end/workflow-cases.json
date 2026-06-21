@@ -1,0 +1,41 @@
+[
+  {
+    "id": "greenfield-ui-flow",
+    "mode": "greenfield",
+    "expected_phase_order": [
+      "discovery",
+      "prd",
+      "ui_input",
+      "design",
+      "technical_design",
+      "planning",
+      "development",
+      "review",
+      "release",
+      "completed"
+    ],
+    "assertions": [
+      "every applicable artifact is approved before downstream execution",
+      "implementation is assigned to Claude Code",
+      "production completion includes verification"
+    ]
+  },
+  {
+    "id": "non-ui-flow",
+    "mode": "non-ui",
+    "expected_phase_order": [
+      "discovery",
+      "prd",
+      "technical_design",
+      "planning",
+      "development",
+      "review",
+      "release",
+      "completed"
+    ],
+    "assertions": [
+      "ui_input and ui are not_applicable with rationale",
+      "remaining gates are not skipped"
+    ]
+  }
+]

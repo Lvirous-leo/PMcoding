@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI Product Factory"
+  short_description: "Orchestrate governed product delivery end to end"
+  default_prompt: "Use $ai-product-factory to inspect the repository, resume the first incomplete phase, and enforce every approval gate."

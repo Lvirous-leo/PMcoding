@@ -1,0 +1,28 @@
+[
+  {
+    "id": "prd-greenfield-standard",
+    "input": "A new collaboration product with moderate uncertainty",
+    "required_sections": [
+      "Product Vision",
+      "Problem and Evidence",
+      "Product Thinking Analysis",
+      "Requirements",
+      "Acceptance Criteria",
+      "Approval"
+    ],
+    "assertions": [
+      "facts and assumptions are distinguishable",
+      "requirements use stable IDs",
+      "decision matches evidence level"
+    ]
+  },
+  {
+    "id": "prd-enhancement-lite",
+    "input": "A reversible enhancement to an existing workflow",
+    "required_sections": ["Scope and Non-goals", "Requirements", "Risks and Assumptions"],
+    "assertions": [
+      "unaffected approved content is preserved",
+      "changed identifiers and downstream impact are recorded"
+    ]
+  }
+]

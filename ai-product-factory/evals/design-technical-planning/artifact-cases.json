@@ -1,0 +1,20 @@
+[
+  {
+    "id": "ui-input-complete-states",
+    "input": "Approved PRD for a UI product",
+    "required_sections": ["User Flows", "Screen Inventory", "States and Feedback", "Accessibility"],
+    "assertions": [
+      "flows and screens map to requirement IDs",
+      "loading empty error permission and success states are covered"
+    ]
+  },
+  {
+    "id": "non-ui-tdd",
+    "input": "Approved webhook product in non-ui mode",
+    "required_sections": ["Architecture", "API Design", "Security", "Testing Strategy", "Deployment and Rollback"],
+    "assertions": [
+      "UI artifacts are not fabricated",
+      "interface feedback and recovery are designed"
+    ]
+  }
+]
