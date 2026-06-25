@@ -1,6 +1,6 @@
-# Codex Skills
+# PMcoding Skills
 
-Personal Codex skills and plugins.
+ Codex skills and plugins.
 
 ## AI Product Factory
 
